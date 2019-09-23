@@ -1,0 +1,1346 @@
+/* Intégration des différentes polices */
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/roboto-bold-webfont.eot');
+    src: url('../fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-bold-webfont.woff') format('woff'),
+         url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotomedium';
+    src: url('../fonts/roboto-medium-webfont.eot');
+    src: url('../fonts/roboto-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-medium-webfont.woff') format('woff'),
+         url('../fonts/roboto-medium-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-medium-webfont.svg#robotomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/roboto-regular-webfont.eot');
+    src: url('../fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-regular-webfont.woff') format('woff'),
+         url('../fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Définition des polices personnalisées */
+html
+{
+	font-size: 100%;
+}
+nav, p, ul
+{
+	font-family: robotoregular, serif;
+	font-weight: normal;
+	font-size: 1vw;
+}
+div h1
+{
+	font-family: robotobold, serif;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 2.2vw;
+}
+section h2
+{
+	font-family: robotobold, serif;
+	font-size: 2.2vw;
+	font-weight: normal;
+}
+#bloc_page
+{
+	width: 100%;
+}
+/* Header */
+header 
+{
+    display: flex;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: white;
+}
+#logo
+{
+    padding-left: 230px;
+}
+.navi
+{
+    padding-left: 650px;
+}
+/* Naviguation */
+label
+{
+	display: none;
+	font-size: 26px;
+	color: #787E80;
+}
+#toogle
+{
+	display: none;
+}
+#menu ul
+{
+	list-style-type: none;
+	display: flex;
+	padding-top: 20px;
+	width: 80%;
+	text-align: center;
+}
+#menu li
+{
+	width: 25%;
+	padding-right: 12px;
+}
+#menu a
+{
+	font-size: 18px;
+    color: #787E80;
+    padding-top: 50px;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+#menu a:hover
+{
+	border-top: 3px solid #3092B3;
+    padding-top: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+/* Slideshow + Bannière description */
+#slideshow 
+{
+	position: relative;
+    width: 1600px;
+    margin: auto;
+    height: 550px;
+    padding-top: 100px;
+}
+/* gestion des dimensions et débordement du conteneur */
+#slideshow .container 
+{
+	position:relative;
+	width: 100%;
+	height: 550px;
+	overflow: hidden;
+}	
+/* 
+   le conteneur des slides
+   en largeur il fait 100% x le nombre de slides
+*/
+#slideshow .slider 
+{
+	position: absolute;
+	left:0; top:0;
+	width: 200%;
+	height: 550px;
+}
+/* annulation des marges sur figure */
+#slideshow figure 
+{
+	position:relative;
+	display:inline-block;
+	padding:0; margin:0;
+}
+.dimension
+{
+    width: 100%;
+    max-height: 550px;
+}
+/* fonction d'animation, n'oubliez pas de prefixer ! */
+@keyframes slider 
+{
+	0%, 30%, 100%	{ left: 0 }
+	50%, 75%		{ left: -100% }
+}
+/* complétez le sélecteur : */
+#slideshow .slider 
+{
+	/* ... avec la propriété animation */
+	animation: slider 24s infinite;
+}
+#timeline 
+{
+	position: absolute;
+    bottom: 0;
+    height: 3px;
+    background: rgba(48, 146, 179, 0.8);
+    width: 0;
+	/* fonction d'animation */
+	animation: timeliner 24s infinite;
+}
+@keyframes timeliner 
+{
+	0%, 30%, 100%	{ width: 0;		}
+	50%, 75%		{ width: 1600px;	}
+}
+#banniere_description
+{
+	position: absolute;
+    width: 42%;
+    height: 44px;
+    padding-top: 150px;
+    padding-left: 200px;
+    padding-bottom: 15px;
+    color: white;
+}
+#banniere_description h2
+{
+	font-size: 2.5vw;
+    width: 98%;
+    height: 110px;
+}
+#banniere_description span
+{
+	color: #39ADD4;
+}
+.bouton_bleu
+{
+	height: 32px;
+    width: 116px;
+    position: absolute;
+    left: 200px;
+    top: 300px;
+    background-color: #39ADD4;
+    border-bottom: 4px solid #3092B3;
+    border-radius: 2px;
+    font-size: 1.1vw;
+    padding: 8px 6px 0px 6px;
+    margin-bottom: 2px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-family: robotobold;
+}
+.bouton_bleu:hover
+{
+	background-color: #3092B3;
+}
+#chevron_droit
+{
+    position: absolute;
+    right: 0px;
+    top: 231px;
+    width: 35px;
+    height: 43px;
+    background-color: rgba(0, 0, 0, 0.28);
+    padding-top: 26px;
+    border-radius: 197px 0px 0px 197px;
+}
+#chevron_droit:hover, #chevron_gauche:hover
+{
+	cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.68);
+}
+.fa-chevron-right
+{
+	color: white;
+	padding-left: 22px;
+}
+#chevron_gauche
+{
+	position: absolute;
+    left: 0px;
+    top: 231px;
+    width: 35px;
+    height: 43px;
+    background-color: rgba(0, 0, 0, 0.28);
+    border-radius: 0px 197px 197px 0px;
+    text-align: center;
+    padding-top: 26px;
+}
+.fa-chevron-left 
+{
+    color: white;
+    padding-right: 18px;
+}
+/* Partie nos services */
+#haut_aside_ns
+{
+	text-align: center;
+	padding-top: 50px;
+}
+#haut_aside_ns h2
+{
+	padding-bottom: 30px;
+
+}
+#bar-cercle-ns, #bar_cercle_np
+{
+	width: 121px;
+    height: 1px;
+    margin: auto;
+    background-color: #A9AEB0;
+    position: relative;
+}
+#cercle-ns, #cercle_np
+{
+	width: 10px;
+    height: 10px;
+    background-color: #39ADD4;
+    margin: auto;
+    border-radius: 12px;
+    position: absolute;
+    top: -10px;
+    left: 52px;
+    border: 5px solid white;
+}
+.couleur
+{
+	color: #686d6f;
+}
+#bas_aside_ns
+{
+	display: flex;
+	justify-content: space-around;
+	padding-top: 100px;
+	padding-right: 60px;
+	padding-left: 40px;
+	padding-bottom: 100px;
+	position: relative;
+}
+.main_feature
+{
+	width: 50%;
+    margin: auto;
+    text-align: center;
+}
+.main_feature img
+{
+	max-width: 640px;
+    height: auto;
+}
+.liste_nosservices
+{
+    width: 50%;
+}
+#ns_services
+{
+	list-style: none;
+	width: 85%;
+}
+.lns
+{
+	width: 100%;
+    padding-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.border_ux
+{
+	border: 1px solid #A9AEB0;
+    border-radius: 145px;
+    width: 30px;
+    height: 30px;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    text-align: center
+}
+.rond_border_ux
+{
+	width: 10px;
+    height: 10px;
+    background-color: #39ADD4;
+    position: absolute;
+    top: 18px;
+    left: 43px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+.fa-chart-line, .fa-cubes, .fa-chart-pie
+{
+	font-size: 20px;
+    color: #39ADD4;
+    padding-top: 5px;
+}
+.text_ux
+{
+    margin-left: 20px;
+    width: 90%;
+}
+.text_ux mark
+{
+	background-color: white;
+    color: #686d6f;
+}
+/* Partie nos projets */
+#nos_projets
+{
+	background-color: #E8ECED;
+}
+#haut_aside_np
+{
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+#haut_aside_np h2
+{
+	padding-bottom: 20px;	
+}
+#liste_nosprojets ul 
+{
+    list-style-type: none;
+    display: flex;
+    width: 340px;
+    margin: 0 auto;
+}
+#liste_nosprojets li 
+{
+    position: relative;
+    width: 25%;
+}
+#liste_nosprojets a 
+{
+    text-decoration: none;
+    color: #787E80;
+    padding: 10px 0px;
+    background-color: #CBD0D1;
+    font-size: 1vw;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+#liste_nosprojets a:hover 
+{
+	color: white;
+    background-color: #39ADD4;
+    border-bottom: 3px solid #3092B3;
+    color: white;
+    padding-bottom: 7px;
+}
+#gauche
+{
+	border-radius: 2px 0px 0px 2px;
+}
+#droite
+{
+	border-radius: 0px 2px 2px 0px;
+}
+.fleche i 
+{
+    opacity: 0;
+    position: absolute;
+    top: 33px;
+    left: 35px;
+    color: #3092B3;
+    font-size: 1.5em;
+}
+.fleche a:hover + i
+{
+	opacity: 1;
+}
+#images_nosprojets
+{
+	display: flex;
+    flex-wrap: wrap;
+    width: 77%;
+    padding-top: 65px;
+    margin-left: 195px;
+    align-items: center;
+    justify-content: space-around;
+}
+.image
+{
+	width: 23%;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    margin: 1%;
+    margin: 12px;
+}
+.redimension_image
+{
+	height: auto;
+    display: block;
+    width: 100%;
+}
+.imgp
+{
+	opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.52);
+    text-align: left;
+    font-family: robotobold;
+    font-size: 1vw;
+    color: white;
+}
+.imgp strong 
+{
+    padding-left: 20px;
+}
+.imgp p
+{
+	padding-left: 20px;
+    padding-top: 3px;
+    font-size: 0.9vw;
+}
+.eye
+{
+	position: absolute;
+    top: -21px;
+    right: 13px;
+    line-height: 40px;
+    width: 28;
+    width: 40px;
+    text-align: center;
+    background-color: #39ADD4;
+    border-radius: 64%;
+    font-size: 0.8vw;
+    border: 2px solid white;
+}
+.image:hover .imgp 
+{
+    opacity: 1;  
+}
+.image:hover
+{
+	cursor: pointer;
+}
+/* Partie formulaire de contact */
+#plan
+{
+	padding-top: 50px;
+}
+iframe
+{
+	-webkit-opacity: 0.5;
+    zoom: 1;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+
+	/* IE 8 seulement */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
+	
+	/* IE 6,7,8 */
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+	filter: alpha(opacity=50);
+    width: 100%;
+    height: 800px;
+    border: 0;
+}
+#frame
+{
+	background-color: rgb(0, 194, 255, 0.3);
+	background-color: rgba(0, 194, 255, 0.3);
+    width: 100%;
+    height: 800px;
+}
+form
+{
+	width: 350px;
+    border-radius: 2px;
+    background-color: rgba(250, 252, 252, 0.7);
+}
+form h2
+{
+	font-size: 1.4vw;
+    padding-left: 15px;
+    padding-top: 16px;
+    font-family: robotorbold;
+}
+#societe
+{
+	font-family: robotobold;
+    padding-left: 15px;
+    font-size: 0.9vw;
+    color: #686d6f;
+}
+#adresse
+{
+	color: #686d6f;
+    padding-left: 15px;
+    font-size: 11.9px;
+}
+#telephone
+{
+	color: #686d6f;
+    padding-left: 15px;
+    font-size: 11.9px;
+}
+#telephone span
+{
+	border-bottom: 0.5px dotted #686d6f;
+    color: #686d6f;
+}
+input[type=text], input[type=email], textarea
+{
+    border: 1px solid #787E80;
+    border-radius: 2px;
+    background-color: white;
+    width: 85%;
+    padding: 2%;
+    margin: 4%;
+}
+input[type=submit]
+{
+	height: 33px;
+    background-color: #39ADD4;
+    border-bottom: 4px solid #3092B3;
+    border-top: 1px solid #39ADD4;
+    border-right: 1px solid #39ADD4;
+    border-left: 1px solid #39ADD4;
+    border-radius: 2px;
+    font-size: 0.8vw;
+    padding: 1px 8px 2px 8px;
+    color: white;
+    font-family: robotoregular;
+    text-decoration: none;
+	margin-left: 15px;
+	margin-bottom: 20px;
+}
+input[type=submit]:hover
+{
+	cursor: pointer;
+	background-color: #3092B3;
+}
+#contact
+{
+	position: relative;
+}
+#formulaire_de_contact
+{
+	position: absolute;
+    right: 230px;
+    top: 134px;
+}
+@media screen and (max-width: 1600px)
+{
+    #slideshow
+    {
+        width: 1500px;
+    }
+    .slider img
+    {
+        width: 1500px;
+    }
+    .navi 
+    {
+        padding-left: 550px;
+    }
+}
+@media screen and (max-width: 1441px)
+{
+    header 
+    {
+        padding-left: 130px;
+        padding-right: 130px;
+    }
+    #logo 
+    {
+        padding-left: 15px;
+    }
+    .navi 
+    {
+        padding-left: 500px;
+    }
+    #menu a
+    {
+        font-size: 23px;
+    }	
+    #slideshow 
+	{
+		width: 1440px;
+    }
+    #slideshow figure
+    {
+        width: 1440px;
+    }
+    .slider img
+    {
+    	width: 100%;
+    }
+    #slideshow .container 
+    {
+        height: 495px;
+    }
+    #banniere_description
+    {
+        padding-left: 145px;
+    }
+    #chevron_droit, #chevron_gauche
+    {
+        top: 213px;
+    }
+    .bouton_bleu
+    {
+        top: 280px;
+        left: 145px;
+    }
+	#liste_nosprojets ul 
+	{
+		width: 328px;
+    }
+    .fleche i
+    {
+    	top: 31px;
+    }
+    .imgp  
+    {
+    	height: 35%;
+    }
+    .image 
+    {
+    	margin: 10px;
+    }
+    .eye 
+    {
+    	top: -18px;
+        line-height: 35px;
+        width: 35px;
+    }
+}
+@media screen and (max-width: 1290px)
+{
+    header 
+    {
+        padding-left: 125px;
+    }
+    .navi 
+    {
+        padding-left: 360px;
+    }
+    #slideshow 
+    {
+        width: 1280px;
+    }
+    #slideshow .container 
+    {
+        height: 440px;
+    }
+    #slideshow figure 
+    {
+        width: 1280px;
+    }
+    .image 
+    {
+        width: 23%;
+        margin: 1%;
+    }
+    .fleche i 
+    {
+        top: 30px;
+    }
+}
+@media screen and (max-width: 1035px)
+{
+	header 
+	{
+		padding-left: 125px;
+        padding-right: 125px;
+    }
+    .navi 
+    {
+        padding-left: 140px;
+    }
+    #menu ul 
+    {
+        padding-top: 15px;
+    }
+    #menu a 
+    {
+    	font-size: 2vw;
+    }
+    #chevron_droit, #chevron_gauche
+    {
+    	top: 141.5px;
+    }
+    #slideshow 
+    {
+    	width: 1024px;
+    	height: 352px;
+    }
+    #slideshow figure
+    {
+    	width: 1024px;
+        height: 352px;
+    }
+    #slideshow .container 
+    {
+    	height: 352px;
+    }
+    #banniere_description 
+    {
+    	padding-left: 135px;
+        padding-top: 105px;
+    }
+    .bouton_bleu 
+    {
+    	height: 25px;
+        width: 80px;
+        left: 135px;
+        top: 200px;
+    }
+    #ns_services 
+    {
+    	width: 90%;
+    }
+	#liste_nosprojets ul 
+	{
+		width: 277px;
+    }
+    #liste_nosprojets a 
+    {
+    	font-size: 1.2vw;
+    }
+    .image 
+    {
+    	margin: 7px;
+    }
+    .fleche i 
+    {
+    	top: 30px;
+        left: 31px;
+        font-size: 1.6em;
+    }
+    .eye 
+    {
+    	top: -17px;
+        line-height: 30px;
+        width: 30px;
+    }
+    input[type=submit] 
+    {
+    	font-size: 1vw;
+    }
+    #images_nosprojets 
+    {
+    	margin: auto;
+    }
+    #formulaire_de_contact 
+    {
+        right: 150px;
+    }
+}
+@media screen and (max-width: 970px)
+{
+    header 
+    {
+        padding-left: 58px;
+        padding-right: 0;
+    }
+    #slideshow 
+    {
+        width: 960px;
+    }
+    #slideshow figure 
+    {
+        width: 960px;
+    }
+    .fleche i 
+    {
+        top: 29px;
+    }
+}
+@media screen and (max-width: 769px)
+{
+	section h2 
+	{
+		font-size: 4vw;
+    }
+    p
+    {
+    	font-size: 1.5vw;
+    }
+	header 
+	{    
+		padding-left: 45px;
+
+    }
+    .navi
+    {
+        padding-left: 9px;
+    }
+    #menu
+    {
+        width: 430px;
+    }
+    #menu ul
+    {
+        padding-left: 50px;
+    }
+    #menu a 
+    {
+    	font-size: 2.3vw;
+    }
+    #menu a:hover
+    {
+        display: none;
+    }
+    #slideshow .slider 
+    {
+    	animation: inherit;
+        width: 100%;
+    }
+    #timeline
+    {
+    	display: none;
+    }
+    #slideshow 
+    {
+    	width: 768px;
+        height: 360px;
+    }
+    #chevron_droit, #chevron_gauche 
+    {
+    	display: none;
+    }
+    #slideshow .container 
+    {
+    	height: 360px;
+    }
+    .slider img 
+    {
+    	width: 100%;
+        height: 360px;
+    }
+    #banniere_description 
+    {
+        padding-left: 60px;
+        padding-top: 130px;
+    }
+    .bouton_bleu 
+    {
+    	font-size: 1.4vw;
+        top: 210px;
+        height: 21px;
+        width: 69px;
+        left: 60px;
+    }
+    .main_feature 
+    {
+        width: 100%;    
+    }
+    #bas_aside_ns 
+    {
+        display: unset;
+    }
+    .liste_nosservices 
+    {
+        margin: auto;
+        width: 60%;
+    }
+    #ns_services 
+    {
+    	width: 100%;
+    }
+    .border_ux 
+    {
+    	width: 20px;
+        height: 20px;
+        padding: 8px;
+    }
+    .fa-chart-line, .fa-cubes, .fa-chart-pie
+    {
+    	font-size: 15px;
+        padding-top: 3px;
+    }
+    .rond_border_ux 
+    {
+    	width: 5px;
+        height: 5px;
+        top: 14px;
+        left: 31px;
+    } 
+    #liste_nosprojets ul 
+    {
+    	width: 75%;
+    }
+    #liste_nosprojets a 
+    {
+    	font-size: 2vw;
+        background-color: #39ADD4;
+        color: white;
+    }
+    #liste_nosprojets a:hover
+    {
+        display: none;
+    }
+    .fleche i 
+    {
+    	display: none;
+    }
+    .image 
+    {
+    	width: 47%;
+    }
+    .imgp 
+    {
+    	font-size: 2vw;
+        opacity: 1;
+    }
+    .imgp p 
+    {
+    	font-size: 1.6vw;
+    }
+    .eye 
+    {
+    	top: -15px;
+        right: 22px;
+        line-height: 30px;
+        width: 30px;
+        font-size: 1.5vw;
+    }
+    #formulaire_de_contact 
+    {
+        right: 95px;
+    }
+    form
+    {
+        width: 290px;
+    }
+    input[type=submit] 
+    {
+        height: 26px;
+        border-bottom: 3px solid #3092B3;
+        margin-bottom: 15px;
+    }
+}
+@media screen and (max-width: 550px)
+{
+    #logo
+    {
+        width: 50%;
+    }
+    #logo img
+    {
+        width: 220px
+    }
+    .navi
+    {
+        width: 50%;
+    }
+    #menu ul
+    {
+        width: 75%;
+        padding-left: 0;
+    }
+    #slideshow
+    {
+        width: 540px;
+    }
+    #slideshow figure
+    {
+        width: 540px;
+    }
+}
+@media screen and (max-width: 514px)
+{
+    header 
+    {
+        padding: 0;
+    }
+    #logo
+    {
+        width: 30%;
+    }
+    #logo img
+    {
+        width: 200px;
+    }
+    .navi
+    {
+        width: 67%;
+    }
+    #menu 
+    {
+        width: 80%;
+    }
+    #menu a 
+    {
+        font-size: 2.8vw;
+    }
+    #slideshow 
+    {
+        width: 100%;
+    }
+    #slideshow figure 
+    {
+        width: 100%;
+    }
+    #banniere_description 
+    {
+        padding-top: 112px;
+    }
+    #banniere_description h1
+    {
+        font-size: 3vw;
+    }
+    p 
+    {
+        font-size: 1.9vw;
+    }
+    .bouton_bleu 
+    {
+        font-size: 2.3vw;
+        top: 190px;
+    }
+    .image 
+    {
+        width: 60%;
+    }
+    #formulaire_de_contact
+    {
+        position: initial;
+    }
+    form 
+    {
+        width: 80%;
+        margin: auto;
+    }
+    form h2 
+    {
+        font-size: 2.4vw;
+    }
+    #adresse, #societe, #telephone
+    {
+        font-size: 2.9vw;
+    }
+}
+@media screen and (max-width: 590px)
+{
+    #logo 
+    {
+        width: 40%;
+    }
+}
+@media screen and (max-width: 426px)
+{
+	p 
+	{
+		font-size: 2.3vw;
+    }
+	header
+	{
+		display: inherit;
+        position: inherit;
+        padding: 0;
+        margin-left: 20px;
+        margin-top: 10px;
+        width: 85%;
+	}
+	label
+	{
+		display: block;
+		cursor: pointer;
+	}
+	.navi
+	{
+		padding-top: 37px;
+		padding-left: 10px;
+		position: inherit;
+	}
+	#menu
+	{
+		display: none;
+        width: 100%;
+        text-align: center;
+	}
+	#menu ul 
+	{
+        display: block;
+        padding-left: 125px;
+    }
+    #menu li 
+    {
+    	padding: 10px 0px;
+        max-width: 100px;
+        overflow: hidden;
+        width: 100%;
+    }
+    #menu a 
+    {
+    	font-size: 3vw;
+        color: #787E80;
+        padding-left: 0px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-right: 0px;
+    }
+    #toogle:checked + #menu
+    {
+    	display: block;
+    }
+    #slideshow
+    {
+    	display: none;
+    }
+    #bar-cercle-ns, #bar_cercle_np
+    {
+    	width: 75px;
+    }
+    #cercle-ns, #cercle_np
+    {
+    	width: 5px;
+        height: 5px;
+        top: -5px;
+        left: 32px;
+        border: 3px solid white;
+    }
+    .main_feature img 
+    {
+    	width: 100%;
+    }
+    .liste_nosservices 
+    {
+    	width: 90%;
+    }
+    #liste_nosprojets a 
+    {
+    	font-size: 3vw;
+    	background-color: #39ADD4;
+        color: white;
+    }
+    .fleche i 
+    {
+    	display: none;
+    }
+    #liste_nosprojets a:hover 
+    {
+    	display: none;
+    }
+    .image 
+    {
+    	width: 86%;
+    	margin: 6px;
+    }
+    .imgp
+    {
+    	font-size: 4vw;
+    	opacity: 1;
+    }
+    .imgp p 
+    {
+    	font-size: 2.6vw;
+    }
+    .eye 
+    {
+    	top: -18px;
+        line-height: 35px;
+        width: 35px;
+        font-size: 2.5vw;
+    }
+    #formulaire_de_contact 
+    {
+    	position: unset;
+    }
+    form 
+    {
+    	width: 100%;
+    }
+    form h2 
+    {
+    	font-size: 4.4vw;
+    	padding-left: 17px;
+    }
+    #societe, #adresse, #telephone
+    {
+    	padding-left: 17px;
+    }
+    #societe 
+    {
+    	font-size: 2.9vw;
+    }
+    input[type=submit] 
+    {
+    	font-size: 2vw;
+        margin-left: 17px;
+    }
+}
+@media screen and (max-width: 376px)
+{
+	section h2 
+	{
+		font-size: 6vw;
+    }
+    #menu ul
+    {
+        padding-left: 105px;
+    }
+    #menu a 
+    {
+    	font-size: 5vw;
+    }
+    #menu a:hover 
+    {
+    	border-top: 0px solid white;
+        padding: 0px;
+    }
+    .text_ux 
+    {
+        width: 82%;
+    }
+    .rond_border_ux 
+    {
+    	left: 32px;
+    }
+}
+@media screen and (max-width: 321px)
+{
+	header
+	{
+		padding: 0;
+	}
+	#logo
+	{
+		text-align: center;
+        padding-top: 10px;
+        padding-left: 0px;
+	}
+	.navi 
+	{
+		padding-left: 15px;
+    }
+    #menu ul 
+    {
+    	width: 80%;
+        padding: 0;
+    }
+    #menu li 
+    {
+    	max-width: 95px;
+        width: 100%;
+        margin-left: 72.5px;
+    }
+    #menu a
+    {
+    	font-size: 5vw;
+    	padding: 0;
+    }
+    section h2 
+    {
+    	font-size: 8vw;
+    }
+    #bar-cercle-ns, #bar_cercle_np 
+    {
+    	width: 115px;
+    }
+    #cercle-ns, #cercle_np 
+    {
+    	width: 10px;
+        height: 10px;
+        top: -8px;
+        left: 49.5px;
+    }
+}

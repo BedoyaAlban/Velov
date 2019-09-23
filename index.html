@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Bienvenue sur le site interactif de location Velo'v, location de vélo sur Lyon.">
+    <meta name="keywords" content="louer un vélo lyon, louer un velo lyon, location vélo lyon, location velo lyon, carte location velo">
+    <title>Location de Velo'v</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="fr">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" media="screen and (min-width: 1900px)" href="css/stylemw.css">
+    <link rel="icon" type="image/png" href="./images/velov_icon.png">
+ </head>
+ <body>
+    <header>
+        <div id="titre">
+            <h1>Bienvenue sur le site interactif de location Velo'v!</h1>
+        </div>
+    </header>
+    <section id="diapo">
+        <ul id="slides">
+            <li class="diaporama one"><img src="./images/carte.jpeg" alt="image d'une station vélo'v"></li>
+            <li class="diaporama"><img src="./images/reserver.jpeg" alt="image d'un bouton réserver"></li>
+            <li class="diaporama"><img src="./images/signature.png" alt="image d'un vélo'v"></li>
+            <li class="diaporama"><img src="./images/reservation.png" alt="image expliquant comment rendre son vélo'v"></li>
+        </ul>
+        <div class="buttons">
+            <button class="controls" id="previous">&lt;</button>
+            <button class="controls" id="pause">&#10074;&#10074;</button>
+            <button class="controls" id="next">&gt;</button>
+        </div>
+        <div id=info_text>
+            <ul id=text_info>
+                <li>1. Choisir une des 348 stations</li>
+                <li>2. Sélectionner un Vélo'v</li>
+                <li>3. Signer pour réserver</li>
+                <li>4. Votre réservation est valable 20min</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="container">
+     <div id="map"></div>
+     
+     <fieldset id="texte">
+         <legend id=titre_texte><h2>Détails de la Station :</h2></legend>
+         <div id="textes"></div>
+         <div id="reserver">
+             <button type="button" id="btnReserverVelo">Réserver un vélo</button>
+         </div>
+     </fieldset>     
+    <div id="sketchpadapp">
+          <div class="leftside">
+             <input type="submit" value="Effacer" id="clearbutton">
+             <input type="submit" value="Valider" id="submitbutton">
+        </div>
+        <div class="rightside">
+            <canvas id="sketchpad" height="300" width="400">
+            </canvas>
+        </div>
+         </div> 
+    </section>
+    <footer>
+        <span id="base_text">Vous n'avez pas de réservation en cours</span>
+        <div id="sessionstorage">
+            <span id="text_timer"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+            <button id="annuler">Annuler</button>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="./javascript/ajax.js"></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyC6yKJ-WoeTQCN9UIafm8aM0J6ZSRaEsFo"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="./javascript/diaporama.js"></script>
+    <script src="./javascript/carte.js"></script>
+    <script src="./javascript/canvas.js"></script>
+    <script src="./javascript/timer.js"></script>
+    <script src="./javascript/webStorageTest.js"></script>
+ </body>
+</html>

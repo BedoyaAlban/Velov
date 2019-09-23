@@ -1,0 +1,35 @@
+#titre{
+    font-size: 2em;
+}
+#text_info{
+    top: 7%;
+    right: 9%;
+    font-size: 25px;
+}
+#texte{
+    top: 493px;
+    height: 400px;
+}
+#textes{
+    font-size: 20px;
+}
+#sketchpadapp{
+    width: 31%;
+    height: 450px;
+}
+#container{
+    height: 900px;
+}
+#map {
+    height: 900px;
+}
+.leftside{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+footer{
+    font-size: 2em;
+}
+#annuler {
+    font-size: 28px;
+}
